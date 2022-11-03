@@ -21,6 +21,17 @@ export const Wrapper = styled.div`
       font-weight: 600;
     }
   }
+  button {
+    margin-top: 40px;
+    border: none;
+    background-color: white;
+    font-size: 1rem;
+    color: inherit;
+    :hover {
+      text-decoration: underline;
+      font-weight: 700;
+    }
+  }
 `;
 
 export const Login = styled.span`

@@ -3,7 +3,7 @@ import * as S from './style';
 
 import Circle from '../../components/Circle';
 
-const Main = () => {
+const Main = ({ isLoggedIn, userObj }) => {
   return (
     <S.Wrapper>
       <S.Content>
@@ -15,7 +15,11 @@ const Main = () => {
           <span>게시판 가기</span>
         </Circle>
       </S.Content>
-      <S.Login>구글 계정으로 로그인하기</S.Login>
+      {isLoggedIn ? (
+        <span>{userObj.displayName}님 환영합니다</span>
+      ) : (
+        <S.Login>구글 계정으로 로그인하기</S.Login>
+      )}
     </S.Wrapper>
   );
 };

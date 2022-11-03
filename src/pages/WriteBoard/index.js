@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import * as S from './style';
 
 import { dbService } from '../../config';
@@ -13,6 +14,8 @@ import {
 // const isEmpty = (value) => value.trim() === '';
 
 const WriteBoard = ({ userObj }) => {
+  const navigate = useNavigate();
+
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [list, setList] = useState([]);
@@ -38,13 +41,24 @@ const WriteBoard = ({ userObj }) => {
     const textObj = {
       title: title,
       body: body,
-      createdAt: Date.now(),
       creatorId: userObj.uid,
+      author: userObj.displayName,
+      createdAt:
+        new Date().getFullYear() +
+        '-' +
+        (new Date().getMonth() + 1) +
+        '-' +
+        new Date().getDate() +
+        ' ' +
+        new Date().getHours() +
+        ':' +
+        new Date().getMinutes(),
     };
 
     await addDoc(collection(dbService, 'list'), textObj);
-    setTitle('');
-    setBody('');
+
+    alert('성공적으로 등록되었습니다');
+    navigate('/board');
   };
 
   const onTitleChange = (event) => {
@@ -63,12 +77,14 @@ const WriteBoard = ({ userObj }) => {
 
   return (
     <S.Wrapper>
+      <section>
+        <div onClick={() => navigate('/board')}>게시판 바로가기</div>
+      </section>
       <S.Form onSubmit={onSubmit}>
         <S.Title>
+          <label htmlFor="author">작성자</label>{' '}
+          <span>{userObj.displayName}</span>
           <label htmlFor="title">제목</label>
-          <div>
-            Be specific and imagine you’re asking a question to another person
-          </div>
           <input
             value={title}
             type="title"
@@ -78,10 +94,6 @@ const WriteBoard = ({ userObj }) => {
         </S.Title>
         <S.Body>
           <label htmlFor="body">내용</label>
-          <div>
-            Include all the information someone would need to answer your
-            question
-          </div>
           <textarea
             rows="12"
             id="body"
