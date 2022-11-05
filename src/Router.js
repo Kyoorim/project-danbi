@@ -9,7 +9,7 @@ export default function Router({ userObj, isLoggedIn }) {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home userObj={userObj} />} />
+        <Route path="/" element={<Home />} />
         <Route
           path="/main"
           element={<Main userObj={userObj} isLoggedIn={isLoggedIn} />}

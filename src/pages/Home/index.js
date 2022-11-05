@@ -1,28 +1,20 @@
 import React from 'react';
 import * as S from './style';
 import { useNavigate } from 'react-router-dom';
-import { authService } from '../../config';
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { apiService } from '../../api';
 
 import Circle from '../../components/Circle';
 
-const Home = ({ userObj }) => {
+const Home = () => {
   const navigate = useNavigate();
 
   const onSocialClick = async (e) => {
-    const {
-      target: { name },
-    } = e;
-    let provider;
     try {
-      if (name === 'google') {
-        provider = new GoogleAuthProvider();
-      }
-      await signInWithPopup(authService, provider);
+      await apiService.SocialLogin(e);
+      alert('로그인 성공');
       navigate('/main');
-      console.log(userObj);
-    } catch (err) {
-      alert(err);
+    } catch {
+      alert('로그인이 실패했습니다');
     }
   };
   return (

@@ -1,15 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as S from './style';
 
-import { dbService } from '../../config';
-import {
-  collection,
-  addDoc,
-  onSnapshot,
-  query,
-  orderBy,
-} from 'firebase/firestore';
+import { apiService } from '../../api';
 
 // const isEmpty = (value) => value.trim() === '';
 
@@ -18,22 +11,6 @@ const WriteBoard = ({ userObj }) => {
 
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
-  const [list, setList] = useState([]);
-
-  useEffect(() => {
-    const q = query(
-      collection(dbService, 'list'),
-      orderBy('createdAt', 'desc')
-    );
-    onSnapshot(q, (snapshot) => {
-      const listArr = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      console.log(listArr);
-      setList(listArr);
-    });
-  }, []);
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -55,10 +32,13 @@ const WriteBoard = ({ userObj }) => {
         new Date().getMinutes(),
     };
 
-    await addDoc(collection(dbService, 'list'), textObj);
-
-    alert('성공적으로 등록되었습니다');
-    navigate('/board');
+    try {
+      await apiService.PutPost(textObj);
+      alert('성공적으로 등록되었습니다');
+      navigate('/board');
+    } catch {
+      alert('등록에 실패했습니다');
+    }
   };
 
   const onTitleChange = (event) => {
@@ -105,6 +85,9 @@ const WriteBoard = ({ userObj }) => {
         </S.Body>
         <button type="submit">게시글 등록</button>
       </S.Form>
+      {/* {list.map((text) => (
+        <div key={text.creatorId}>{text.title}</div>
+      ))} */}
     </S.Wrapper>
   );
 };
