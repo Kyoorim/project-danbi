@@ -2,13 +2,16 @@ import React, { useState, useEffect } from 'react';
 import * as S from './style';
 import { query, onSnapshot, collection, orderBy } from 'firebase/firestore';
 import { dbService } from '../../config';
-// import BoardBox from '../../components/BoardBox';
+import BoardBox from '../../components/BoardBox';
 
-const Board = () => {
+const Board = ({ userObj }) => {
   const [list, setList] = useState([]);
 
   useEffect(() => {
-    const q = query(collection(dbService, 'list'), orderBy('createdAt'));
+    const q = query(
+      collection(dbService, 'list'),
+      orderBy('createdAt', 'desc')
+    );
     onSnapshot(q, (snapshot) => {
       const listArr = snapshot.docs.map((doc) => ({
         id: doc.id,
@@ -23,15 +26,11 @@ const Board = () => {
     <>
       <div>
         {list.map((post) => (
-          //   <BoardBox key={post.id} list={list} />
-          <S.Container key={post.id}>
-            <div>
-              <span>{post.title}</span>
-              <span>{post.body}</span>
-            </div>
-            <div>{post.author}</div>
-            <div>{post.createdAt}</div>
-          </S.Container>
+          <BoardBox
+            key={post.id}
+            list={post}
+            isOwner={post.creatorId === userObj.uid}
+          />
         ))}
       </div>
     </>

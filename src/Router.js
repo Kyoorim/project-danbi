@@ -17,7 +17,7 @@ export default function Router({ userObj, isLoggedIn }) {
         {isLoggedIn && (
           <Route path="/write" element={<WriteBoard userObj={userObj} />} />
         )}
-        <Route path="/board" element={<Board />} />
+        <Route path="/board" element={<Board userObj={userObj} />} />
       </Routes>
     </BrowserRouter>
   );

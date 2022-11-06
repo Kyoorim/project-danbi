@@ -4,8 +4,6 @@ import * as S from './style';
 
 import { apiService } from '../../api';
 
-// const isEmpty = (value) => value.trim() === '';
-
 const WriteBoard = ({ userObj }) => {
   const navigate = useNavigate();
 
@@ -20,7 +18,8 @@ const WriteBoard = ({ userObj }) => {
       body: body,
       creatorId: userObj.uid,
       author: userObj.displayName,
-      createdAt:
+      createdAt: Date.now(),
+      postedAt:
         new Date().getFullYear() +
         '-' +
         (new Date().getMonth() + 1) +
