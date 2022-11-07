@@ -1,21 +1,16 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import * as S from './style';
 
 import { apiService } from '../../api';
 
 const WriteBoard = ({ userObj }) => {
-  const navigate = useNavigate();
-
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
+  const [text, setText] = useState('');
 
   const onSubmit = async (event) => {
     event.preventDefault();
 
     const textObj = {
-      title: title,
-      body: body,
+      text: text,
       creatorId: userObj.uid,
       author: userObj.displayName,
       createdAt: Date.now(),
@@ -34,29 +29,40 @@ const WriteBoard = ({ userObj }) => {
     try {
       await apiService.PutPost(textObj);
       alert('성공적으로 등록되었습니다');
-      navigate('/board');
+      setText('');
     } catch {
       alert('등록에 실패했습니다');
     }
   };
 
-  const onTitleChange = (event) => {
+  const onTextChange = (event) => {
     const {
       target: { value },
     } = event;
-    setTitle(value);
+    setText(value);
   };
 
-  const onBodyChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setBody(value);
-  };
+  // const onBodyChange = (event) => {
+  //   const {
+  //     target: { value },
+  //   } = event;
+  //   setBody(value);
+  // };
 
   return (
-    <S.Wrapper>
+    <S.Form onSubmit={onSubmit}>
+      <div></div>
       <section>
+        <textarea
+          value={text}
+          type="text"
+          placeholder="내용을 쓰세요"
+          onChange={onTextChange}
+        ></textarea>
+        <button type="submit">등록</button>
+      </section>
+    </S.Form>
+    /* <section>
         <div onClick={() => navigate('/board')}>게시판 바로가기</div>
       </section>
       <S.Form onSubmit={onSubmit}>
@@ -83,11 +89,8 @@ const WriteBoard = ({ userObj }) => {
           ></textarea>
         </S.Body>
         <button type="submit">게시글 등록</button>
-      </S.Form>
-      {/* {list.map((text) => (
-        <div key={text.creatorId}>{text.title}</div>
-      ))} */}
-    </S.Wrapper>
+      </S.Form> */
+    // </S.Wrapper>
   );
 };
 

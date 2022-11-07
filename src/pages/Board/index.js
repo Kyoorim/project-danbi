@@ -23,17 +23,15 @@ const Board = ({ userObj }) => {
   }, []);
 
   return (
-    <>
-      <div>
-        {list.map((post) => (
-          <BoardBox
-            key={post.id}
-            list={post}
-            isOwner={post.creatorId === userObj.uid}
-          />
-        ))}
-      </div>
-    </>
+    <div>
+      {list.map((post) => (
+        <BoardBox
+          key={post.id}
+          list={post}
+          isOwner={post.creatorId === userObj.uid}
+        />
+      ))}
+    </div>
   );
 };
 

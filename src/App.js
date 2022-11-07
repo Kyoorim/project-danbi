@@ -23,6 +23,7 @@ export default function App() {
         setIsLoggedIn(false);
       }
       setInit(true);
+      // console.log(userObj.uid);
     });
   }, []);
 
