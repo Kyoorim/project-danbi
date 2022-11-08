@@ -16,7 +16,7 @@ export const PostContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 500px;
-  margin-top: 25px;
+  margin-bottom: 15px;
   border: 1px solid #d3d3d3;
   border-left: none;
   border-right: none;
@@ -47,6 +47,7 @@ export const Title = styled.div`
     button {
       border: none;
       color: inherit;
+      background-color: #f6f6f6;
     }
   }
 `;
@@ -56,7 +57,7 @@ export const Body = styled.div`
   justify-content: center;
   align-items: flex-start;
   box-sizing: border-box;
-  padding: 10px 15px 0px 15px;
+  padding: 10px 15px 5px 15px;
   div {
     width: 86px;
     height: 86px;

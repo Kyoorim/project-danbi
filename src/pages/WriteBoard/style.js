@@ -11,6 +11,7 @@ export const Form = styled.form`
   border-left: none;
   border-right: none;
   width: 500px;
+  margin-bottom: 20px;
   div {
     background-color: white;
     width: 86px;

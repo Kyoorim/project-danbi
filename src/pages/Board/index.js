@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import * as S from './style';
 import { query, onSnapshot, collection, orderBy } from 'firebase/firestore';
 import { dbService } from '../../config';
 import BoardBox from '../../components/BoardBox';
@@ -28,7 +27,7 @@ const Board = ({ userObj }) => {
         <BoardBox
           key={post.id}
           list={post}
-          isOwner={post.creatorId === userObj.uid}
+          isOwner={post.creatorId === userObj?.uid}
         />
       ))}
     </div>

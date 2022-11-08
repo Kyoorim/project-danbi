@@ -83,11 +83,13 @@ const BoardBox = ({ list, isOwner }) => {
               <h4>레드타이거</h4>
               <span>({list.postedAt})</span>
             </div>
-            <div>
-              <button onClick={toggleEditing}>수정 </button>
-              <span>|</span>
-              <button onClick={onDeleteClick}>삭제</button>
-            </div>
+            {isOwner && (
+              <div>
+                <button onClick={toggleEditing}>수정 </button>
+                <span>|</span>
+                <button onClick={onDeleteClick}>삭제</button>
+              </div>
+            )}
           </S.Title>
           <S.Body>
             <div>이미지</div>
@@ -97,38 +99,6 @@ const BoardBox = ({ list, isOwner }) => {
           </S.Body>
         </S.PostContainer>
       )}
-      {/* {editing ? (
-        <form onSubmit={onSubmit}>
-          <input
-            type="text"
-            placeholder="제목 수정"
-            value={newTitle}
-            onChange={onTitleChange}
-          ></input>
-          <input
-            type="text"
-            placeholder="본문 수정"
-            value={newBody}
-            onChange={onBodyChange}
-          ></input>
-          <button type="submit" value="update post">
-            제출하기
-          </button>
-        </form>
-      ) : (
-        <p>
-          <span>{list.title}</span>
-          <span>{list.body}</span>
-          <span>{list.createdAt}</span>
-          <span>{list.author}</span>
-          {isOwner && (
-            <>
-              <button onClick={toggleEditing}>수정하기</button>
-              <button onClick={onDeleteClick}>삭제하기</button>
-            </>
-          )}
-        </p>
-      )} */}
     </>
   );
 };
