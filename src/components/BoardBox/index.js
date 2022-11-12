@@ -51,9 +51,8 @@ const BoardBox = ({ list, isOwner }) => {
     <>
       {editing ? (
         <S.Form onSubmit={onSubmit}>
-          <S.Title>
+          <S.Author>
             <div>
-              <span>No.1</span>
               <h4>레드타이거</h4>
               <span>({list.postedAt})</span>
             </div>
@@ -62,7 +61,7 @@ const BoardBox = ({ list, isOwner }) => {
                 업데이트
               </button>
             </div>
-          </S.Title>
+          </S.Author>
           <S.Body>
             <div>이미지</div>
             <section>
@@ -77,9 +76,8 @@ const BoardBox = ({ list, isOwner }) => {
         </S.Form>
       ) : (
         <S.PostContainer>
-          <S.Title>
+          <S.Author>
             <div>
-              <span>No.1</span>
               <h4>레드타이거</h4>
               <span>({list.postedAt})</span>
             </div>
@@ -90,7 +88,7 @@ const BoardBox = ({ list, isOwner }) => {
                 <button onClick={onDeleteClick}>삭제</button>
               </div>
             )}
-          </S.Title>
+          </S.Author>
           <S.Body>
             <div>이미지</div>
             <section>

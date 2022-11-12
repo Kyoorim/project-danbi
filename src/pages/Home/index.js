@@ -1,26 +1,43 @@
-import React, { useState } from 'react';
+import React from 'react';
 import * as S from './style';
-import Profil from '../../components/Profil';
+import Layout from '../../components/Layout/Layout';
+import ProfileBar from '../../components/Layout/ProfileBar';
+import Card from '../../components/Layout/Card';
 import Main from '../../components/Main';
-import Nav from '../../components/Nav';
+import ProfileContent from '../../components/ProfileContent';
+import mainpic from '../../asset/mainpic.png';
 
-const Home = ({ userObj, isLoggedIn }) => {
-  const [selectedBoard, setSelectedBoard] = useState(true);
-  const [selectedMbti, setSelectedMbti] = useState(false);
-
+const Home = ({ isLoggedIn, userObj }) => {
   return (
-    <>
-      <S.Wrapper>
-        <Profil isLoggedIn={isLoggedIn} userObj={userObj} />
-        <Main
-          isLoggedIn={isLoggedIn}
-          userObj={userObj}
-          selectedBoard={selectedBoard}
-          selectedMbti={selectedMbti}
-        />
-        <Nav selectedBoard={selectedBoard} selectedMbti={selectedMbti} />
-      </S.Wrapper>
-    </>
+    <Layout>
+      <ProfileBar>
+        <Card>
+          <ProfileContent isLoggedIn={isLoggedIn} userObj={userObj} />
+        </Card>
+      </ProfileBar>
+      <Main isLoggedIn={isLoggedIn} userObj={userObj}>
+        <Card>
+          <S.ContentSection>
+            <h2>미니룸</h2>
+            <div>
+              <img src={mainpic} alt="miniroom" />
+            </div>
+          </S.ContentSection>
+          <S.ContentSection>
+            <h2>Bonjour 코딩!</h2>
+            <ul>
+              <li>코딩이라는 새로운 언어와 기술을 통해::</li>
+              <li>
+                물리적 세계를 넘어서 더 넓고 잠재력 넘치는 세상을 탐험해보고자
+                합니다
+              </li>
+              <li></li>
+              <li>로그인하시고 방명록을 남겨주세요~🥑</li>
+            </ul>
+          </S.ContentSection>
+        </Card>
+      </Main>
+    </Layout>
   );
 };
 

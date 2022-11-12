@@ -1,27 +1,16 @@
 import React from 'react';
 import * as S from './style';
-import WriteBoard from '../../pages/WriteBoard';
-import Board from '../../pages/Board';
-import Mbti from '../Mbti';
+import Nav from '../Nav';
 
-const Main = ({ userObj, isLoggedIn, selectedBoard, selectedMbti }) => {
+const Main = ({ children }) => {
   return (
-    <>
-      <S.ContentContainer>
-        <S.ContentPage>
-          <h1>⭐️MBTI 게시판에 오신것을 환영합니ㄷr⭐️</h1>
-          <S.ContentBody>
-            {selectedBoard && (
-              <>
-                {isLoggedIn && <WriteBoard userObj={userObj} />}
-                <Board userObj={userObj} />
-              </>
-            )}
-            {selectedMbti && <Mbti />}
-          </S.ContentBody>
-        </S.ContentPage>
-      </S.ContentContainer>
-    </>
+    <S.ContentContainer>
+      <h1>
+        <span>⭐️프론트엔드 개발자 이규림의 미니포트폴리오⭐️</span>
+      </h1>
+      {children}
+      <Nav />
+    </S.ContentContainer>
   );
 };
 

@@ -22,7 +22,7 @@ export const PostContainer = styled.div`
   border-right: none;
 `;
 
-export const Title = styled.div`
+export const Author = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,6 +54,7 @@ export const Title = styled.div`
 
 export const Body = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   box-sizing: border-box;

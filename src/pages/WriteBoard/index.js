@@ -62,35 +62,6 @@ const WriteBoard = ({ userObj }) => {
         <button type="submit">등록</button>
       </section>
     </S.Form>
-    /* <section>
-        <div onClick={() => navigate('/board')}>게시판 바로가기</div>
-      </section>
-      <S.Form onSubmit={onSubmit}>
-        <S.Title>
-          <label htmlFor="author">작성자</label>{' '}
-          <span>{userObj.displayName}</span>
-          <label htmlFor="title">제목</label>
-          <input
-            value={title}
-            type="title"
-            placeholder="제목을 쓰세요"
-            onChange={onTitleChange}
-          ></input>
-        </S.Title>
-        <S.Body>
-          <label htmlFor="body">내용</label>
-          <textarea
-            rows="12"
-            id="body"
-            type="text"
-            value={body}
-            onChange={onBodyChange}
-            placeholder="내용을 쓰세요"
-          ></textarea>
-        </S.Body>
-        <button type="submit">게시글 등록</button>
-      </S.Form> */
-    // </S.Wrapper>
   );
 };
 

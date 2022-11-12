@@ -1,21 +1,29 @@
 import React from 'react';
 import * as S from './style';
-import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-const Nav = (selectedBoard, selectedMbti) => {
-  const navigate = useNavigate();
-
-  const directToMbti = () => {
-    selectedBoard(false);
-    selectedMbti(true);
-    navigate('/mbti');
-  };
+const Nav = () => {
   return (
     <>
-      <S.Wrapper>
-        <div>게시판</div>
-        <div onClick={directToMbti}>MBTI 보기</div>
-      </S.Wrapper>
+      <S.Nav>
+        <ul>
+          <li>
+            <NavLink exact to="/" className="selected">
+              홈
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/aboutme" activeClassName="selected">
+              프로필
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/board" className="selected">
+              방명록
+            </NavLink>
+          </li>
+        </ul>
+      </S.Nav>
     </>
   );
 };

@@ -19,12 +19,7 @@ export const PutPost = async (textObj) => {
   await addDoc(collection(dbService, 'list'), textObj);
 };
 
-// export const GetPost = async () => {
-//   await getDocs(collection(dbService, 'list'));
-// };
-
 export const apiService = {
   SocialLogin,
   PutPost,
-  //   GetPost,
 };
