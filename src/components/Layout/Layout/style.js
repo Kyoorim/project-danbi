@@ -15,7 +15,7 @@ export const BorderWrapper = styled.div`
   width: 85%;
   height: 90vh;
   padding: 25px;
-  background: #55c0dc;
+  background: var(--bgColor);
   border: 1px solid var(--gray);
   border-radius: 10px;
   box-sizing: border-box;

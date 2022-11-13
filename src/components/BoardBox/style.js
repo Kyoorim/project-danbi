@@ -4,7 +4,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 500px;
+  width: 100%;
   margin-top: 25px;
   border: 1px solid #d3d3d3;
   border-left: none;
@@ -15,7 +15,7 @@ export const PostContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 500px;
+  width: 100%;
   margin-bottom: 15px;
   border: 1px solid #d3d3d3;
   border-left: none;
@@ -54,15 +54,12 @@ export const Author = styled.div`
 
 export const Body = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
   box-sizing: border-box;
   padding: 10px 15px 5px 15px;
   div {
     width: 86px;
     height: 86px;
-    background-color: blue;
     margin-right: 10px;
   }
   section {
@@ -79,7 +76,7 @@ export const Body = styled.div`
       margin-bottom: 10px;
     }
     p {
-      width: 350px;
+      width: 95%;
       height: 80px;
       background-color: white;
       margin-bottom: 10px;

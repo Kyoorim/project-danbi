@@ -53,3 +53,27 @@ export const ProfileSection = styled.section`
     font-size: 0.8rem;
   }
 `;
+
+export const LinkTitle = styled.p`
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  &:first-of-type {
+    margin-top: 20px;
+  }
+  &:last-of-type {
+    margin-bottom: 20px;
+  }
+  a {
+    text-decoration: none;
+  }
+  cursor: pointer;
+  svg {
+    margin-right: 5px;
+    color: #666;
+    font-size: 1.2rem;
+  }
+  &:hover {
+    color: gray;
+  }
+`;

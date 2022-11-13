@@ -8,9 +8,14 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Noto Sans KR', sans-serif;
     box-sizing: border-box;
     color: #737373;
+    button, a {
+        cursor:pointer;
+    }
 }
 
 :root {
---gray: #737373
+--gray: #737373;
+--bgColor:#55c0dc;
+--navColor:#3188ae;
 }
 `;

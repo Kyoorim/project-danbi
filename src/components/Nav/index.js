@@ -13,7 +13,7 @@ const Nav = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/aboutme" activeClassName="selected">
+            <NavLink to="/aboutme" className="selected">
               프로필
             </NavLink>
           </li>

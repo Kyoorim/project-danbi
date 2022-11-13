@@ -2,20 +2,15 @@ import React from 'react';
 import * as S from './style';
 import { authService } from '../../config';
 import { apiService } from '../../api';
-import {
-  MdLink,
-  MdMailOutline,
-  MdLocationOn,
-  MdPhoneIphone,
-} from 'react-icons/md';
+import myphoto from '../../asset/myphoto.jpeg';
+import { MdMailOutline, MdLocationOn, MdPhoneIphone } from 'react-icons/md';
+import { TfiGithub, TfiWrite } from 'react-icons/tfi';
 
 const ProfileContent = ({ isLoggedIn, userObj }) => {
   const onSocialClick = async (e) => {
     try {
       await apiService.SocialLogin(e);
       alert('로그인 성공');
-      console.log('로그인성공');
-      console.log(userObj);
     } catch {
       alert('로그인이 실패했습니다');
     }
@@ -27,15 +22,27 @@ const ProfileContent = ({ isLoggedIn, userObj }) => {
   return (
     <S.FlexWrapper>
       <S.ProfileSection>
-        {/* <img src={publicUrl + '/resources/img/memo_.jpg'} alt="profile" /> */}
-        {/* <S.LinkTitle onClick={goGithub}>
-      <MdLink />
-      Github
-    </S.LinkTitle>
-    <LinkTitle onClick={goVelog}>
-      <MdLink />
-      Velog
-    </LinkTitle> */}
+        <img src={myphoto} />
+        <S.LinkTitle>
+          <TfiGithub />
+          <a
+            href="https://github.com/Kyoorim"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Github
+          </a>
+        </S.LinkTitle>
+        <S.LinkTitle>
+          <TfiWrite />
+          <a
+            href="https://velog.io/@tootb"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Velog
+          </a>
+        </S.LinkTitle>
       </S.ProfileSection>
       <S.ProfileSection>
         <p>

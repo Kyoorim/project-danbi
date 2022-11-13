@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import * as S from './style';
-import { dbService } from '../../config';
+import { dbService, storageService } from '../../config';
 import { doc, deleteDoc, updateDoc } from 'firebase/firestore';
+import { deleteObject, ref } from 'firebase/storage';
 
 const BoardBox = ({ list, isOwner }) => {
   const [editing, setEditing] = useState(false);
@@ -11,10 +12,10 @@ const BoardBox = ({ list, isOwner }) => {
 
   const onDeleteClick = async () => {
     const ok = window.confirm('정말로 삭제하시겠습니까?');
-    console.log(ok);
     if (ok) {
-      //delete nweet
       await deleteDoc(PostRef);
+      const desertRef = ref(storageService, list.attachmentUrl);
+      await deleteObject(desertRef);
     }
   };
 
@@ -53,7 +54,7 @@ const BoardBox = ({ list, isOwner }) => {
         <S.Form onSubmit={onSubmit}>
           <S.Author>
             <div>
-              <h4>레드타이거</h4>
+              <h4>{list.author}</h4>
               <span>({list.postedAt})</span>
             </div>
             <div>
@@ -78,7 +79,7 @@ const BoardBox = ({ list, isOwner }) => {
         <S.PostContainer>
           <S.Author>
             <div>
-              <h4>레드타이거</h4>
+              <h4>{list.author}</h4>
               <span>({list.postedAt})</span>
             </div>
             {isOwner && (
@@ -90,7 +91,16 @@ const BoardBox = ({ list, isOwner }) => {
             )}
           </S.Author>
           <S.Body>
-            <div>이미지</div>
+            {list.attachmentUrl && (
+              <div>
+                <img
+                  src={list.attachmentUrl}
+                  alt="photo"
+                  width="86px"
+                  height="86px"
+                />
+              </div>
+            )}
             <section>
               <p>{list.text}</p>
             </section>

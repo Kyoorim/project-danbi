@@ -22,7 +22,6 @@ const Board = ({ userObj, isLoggedIn }) => {
         id: doc.id,
         ...doc.data(),
       }));
-      console.log(listArr);
       setList(listArr);
     });
   }, []);

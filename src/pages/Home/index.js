@@ -31,8 +31,8 @@ const Home = ({ isLoggedIn, userObj }) => {
                 물리적 세계를 넘어서 더 넓고 잠재력 넘치는 세상을 탐험해보고자
                 합니다
               </li>
+              <li>🥑로그인하시고 방명록을 남겨주세요🥑</li>
               <li></li>
-              <li>로그인하시고 방명록을 남겨주세요~🥑</li>
             </ul>
           </S.ContentSection>
         </Card>

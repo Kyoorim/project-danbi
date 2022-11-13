@@ -11,12 +11,13 @@ export const Nav = styled.nav`
       width: 85px;
       margin-bottom: 2px;
       padding: 10px 10px 10px 15px;
-      background: #3188ae;
+      background: var(--navColor);
       border: 1px solid #a5a5a5;
       border-radius: 10px;
       color: #fff;
       font-size: 0.9rem;
       text-align: center;
+      text-decoration: none;
       &.selected {
         background: #fff;
         color: #333;
