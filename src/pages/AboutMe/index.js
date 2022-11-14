@@ -16,7 +16,6 @@ const AboutMe = () => {
       </ProfileBar>
       <Main>
         <Card>
-          <div>MyInfo</div>
           <MyInfo />
         </Card>
       </Main>

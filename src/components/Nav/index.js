@@ -8,17 +8,26 @@ const Nav = () => {
       <S.Nav>
         <ul>
           <li>
-            <NavLink exact to="/" className="selected">
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? 'selected' : '')}
+            >
               홈
             </NavLink>
           </li>
           <li>
-            <NavLink to="/aboutme" className="selected">
+            <NavLink
+              to="/aboutme"
+              className={({ isActive }) => (isActive ? 'selected' : '')}
+            >
               프로필
             </NavLink>
           </li>
           <li>
-            <NavLink to="/board" className="selected">
+            <NavLink
+              to="/board"
+              className={({ isActive }) => (isActive ? 'selected' : '')}
+            >
               방명록
             </NavLink>
           </li>

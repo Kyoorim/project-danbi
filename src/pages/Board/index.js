@@ -41,6 +41,7 @@ const Board = ({ userObj, isLoggedIn }) => {
               key={post.id}
               list={post}
               isOwner={post.creatorId === userObj?.uid}
+              isLoggedIn={isLoggedIn}
             />
           ))}
         </Card>

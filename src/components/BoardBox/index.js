@@ -4,7 +4,7 @@ import { dbService, storageService } from '../../config';
 import { doc, deleteDoc, updateDoc } from 'firebase/firestore';
 import { deleteObject, ref } from 'firebase/storage';
 
-const BoardBox = ({ list, isOwner }) => {
+const BoardBox = ({ list, isOwner, isLoggedIn }) => {
   const [editing, setEditing] = useState(false);
   const [newText, setNewText] = useState(list.text);
 
@@ -82,7 +82,7 @@ const BoardBox = ({ list, isOwner }) => {
               <h4>{list.author}</h4>
               <span>({list.postedAt})</span>
             </div>
-            {isOwner && (
+            {isOwner && isLoggedIn && (
               <div>
                 <button onClick={toggleEditing}>수정 </button>
                 <span>|</span>

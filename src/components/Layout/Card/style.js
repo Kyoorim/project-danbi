@@ -11,12 +11,9 @@ export const Wrapper = styled.div`
   border-radius: 10px;
   background-color: white;
   box-sizing: border-box;
-  overflow-y: auto;
+  overflow-y: scroll;
   section {
     width: 100%;
     height: 100%;
-  }
-  &::-webkit-scrollbar {
-    display: none;
   }
 `;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import * as S from './style';
 import { authService } from '../../config';
 import { apiService } from '../../api';
@@ -7,6 +8,7 @@ import { MdMailOutline, MdLocationOn, MdPhoneIphone } from 'react-icons/md';
 import { TfiGithub, TfiWrite } from 'react-icons/tfi';
 
 const ProfileContent = ({ isLoggedIn, userObj }) => {
+  const navigate = useNavigate();
   const onSocialClick = async (e) => {
     try {
       await apiService.SocialLogin(e);
@@ -15,10 +17,11 @@ const ProfileContent = ({ isLoggedIn, userObj }) => {
       alert('로그인이 실패했습니다');
     }
   };
+
   const onLogoutClick = () => {
     authService.signOut();
-    isLoggedIn(false);
   };
+
   return (
     <S.FlexWrapper>
       <S.ProfileSection>
