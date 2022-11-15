@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
 `;
 
 export const BorderWrapper = styled.div`
-  width: 85%;
+  width: 70%;
   height: 90vh;
   padding: 25px;
   background: var(--bgColor);
