@@ -1,5 +1,6 @@
 # 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7d00aaa9-eacd-4292-9033-9cfb91ea681e/Untitled.png)
+<img width="1438" alt="스크린샷 2022-11-16 오후 12 17 15" src="https://user-images.githubusercontent.com/86146661/202097839-a3625b49-7c2a-4e39-941e-b219fcf45add.png">
+
 
 # 싸이월드 미니 포트폴리오
 
