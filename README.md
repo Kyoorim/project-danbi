@@ -28,6 +28,13 @@
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white"> <img src="https://img.shields.io/badge/styled components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"/> <img src="https://img.shields.io/badge/firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white"></br>
 <img src="https://img.shields.io/badge/vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
 
+## 🕶 화면 미리보기
+|로그인 화면|프로필 화면|방명록 화면|
+|--|--|--|
+|<img width="100%" alt="스크린샷 2022-11-16 오후 3 17 45" src="https://user-images.githubusercontent.com/86146661/202100154-a6de5796-929b-47e8-bb88-c9ef187ad57f.png">|<img width="100%" alt="스크린샷 2022-11-16 오후 3 18 11" src="https://user-images.githubusercontent.com/86146661/202100181-28a7c2fe-f83d-436b-8ea2-f0ab234bf672.png">|<img width="100%" alt="스크린샷 2022-11-16 오후 3 18 32" src="https://user-images.githubusercontent.com/86146661/202100245-f8489f1f-4337-4a37-949c-183e8df51481.png">|
+|방명록(로그인 후) 화면|사진 업로드 화면|사진 업로드 성공 화면|
+|<img width="100%" alt="스크린샷 2022-11-16 오후 3 18 54" src="https://user-images.githubusercontent.com/86146661/202100294-0ffeed5c-8088-4893-8b7e-44be3aed5f70.png">|<img width="100%" alt="스크린샷 2022-11-16 오후 3 19 34" src="https://user-images.githubusercontent.com/86146661/202100362-0e9ee624-11a4-4444-9ebd-ba62a0adf642.png">|<img width="100%" alt="스크린샷 2022-11-16 오후 3 20 42" src="https://user-images.githubusercontent.com/86146661/202100404-e17dc7af-3494-4dc2-a318-43d957bcbb77.png">
+
 
 ## ✨ 앞으로 추가될 기능
 - Today 및 Total 방문자 수 카운트 
