@@ -7,7 +7,9 @@
 ## 방명록 기능을 추가한 미니포트폴리오(feat. 싸이월드)
 
 > 개발기간: 2022.11.01 ~ 2022.11.15
-> 
+>
+> <a href="project-portfolio-inky.vercel.app">배포 링크</a>
+>
 > <a href="https://github.com/Kyoorim/project-portfolio-v2">싸이월드 미니포트폴리오 ver.2 보러가기</a>
 
 
